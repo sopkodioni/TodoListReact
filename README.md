@@ -1,3 +1,3 @@
-# Todo App in react + vite
+# Todo App in React + Mobx
 
 Туду додадок з використанням бібліотеки React + Mobx
