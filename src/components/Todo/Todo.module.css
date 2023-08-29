@@ -1,0 +1,8 @@
+.todo{
+    background-color: #eee;
+    border: 1px solid #c3c1c1;
+    border-radius: 10px;
+    max-width: 400px;
+    padding: 20px;
+    margin: 100px auto;
+}
