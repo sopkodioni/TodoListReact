@@ -1,17 +1,10 @@
-// Store
 import { observer } from "mobx-react-lite"
-// input form state
 import input from "../../store/input"
-// todoList state
 import todoList from '../../store/todoList'
 
-
-// Components
 import Button from "../Button/Button"
 import Input from "../Input/Input"
 
-
-// Styled
 import style from './TodoForm.module.css'
 
 const TodoForm = observer(() => {
