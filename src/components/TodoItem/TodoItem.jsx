@@ -1,4 +1,4 @@
-import Btn from '../Btn/Btn'
+import Button from '../Button/Button'
 import cl from './TodoItem.module.css'
 
 function TodoItem({id, title}) {
@@ -6,7 +6,7 @@ function TodoItem({id, title}) {
         <div className={cl.todoItem}>
             <span>{id}. </span>
             <span>{title}</span>
-            <Btn style={{backgroundColor: 'red', marginLeft: 'auto'}}>delete</Btn>
+            <Button style={{backgroundColor: 'red', marginLeft: 'auto'}}>delete</Button>
         </div>
     )
 }

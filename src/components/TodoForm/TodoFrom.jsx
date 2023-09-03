@@ -7,7 +7,7 @@ import todoList from '../../store/todoList'
 
 
 // Components
-import Btn from "../Btn/Btn"
+import Button from "../Button/Button"
 import Input from "../Input/Input"
 
 
@@ -23,7 +23,7 @@ const TodoForm = observer(() => {
     return (  
         <form className={cl.todo__form}>
             <Input value={input.value} onChange={(event) => input.onChange(event.target.value)} type="text" placeholder="Name task"/>
-            <Btn onClickFunc={createTodo}>Add</Btn>
+            <Button onClickFunc={createTodo}>Add</Button>
         </form>
     )
 })
