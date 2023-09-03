@@ -1,7 +1,7 @@
 import Button from '../../ui/Button/Button'
 import style from './TodoItem.module.css'
 
-function TodoItem({id, title}) {
+const TodoItem = ({id, title}) => {
     return (  
         <div className={style.todoItem}>
             <span>{id}. </span>

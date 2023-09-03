@@ -3,7 +3,7 @@ import TodoForm from '../TodoForm/TodoFrom'
 
 import style from './Todo.module.css'
 
-function Todo() {
+const Todo = () => {
     return (  
         <div className={style.todo}>
           <TodoForm />
