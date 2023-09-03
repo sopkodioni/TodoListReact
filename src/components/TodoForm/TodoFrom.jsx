@@ -2,8 +2,8 @@ import { observer } from "mobx-react-lite"
 import input from "../../store/input"
 import todoList from '../../store/todoList'
 
-import Button from "../Button/Button"
-import Input from "../Input/Input"
+import Button from "../../ui/Button/Button"
+import Input from "../../ui/Input/Input"
 
 import style from './TodoForm.module.css'
 
