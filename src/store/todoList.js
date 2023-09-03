@@ -15,8 +15,6 @@ class TodoList {
         this.todos.push(todo)
 
         input.onChange('')
-
-        console.log(this.todos);
     }
 
     deleteTodo(id){
