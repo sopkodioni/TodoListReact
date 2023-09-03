@@ -7,10 +7,10 @@ import Input from "../../ui/Input/Input"
 
 import style from './TodoForm.module.css'
 
-const TodoForm = observer(() => {
+const TodoForm = observer(({validForm}) => {
     const createTodo = (e) => {
         e.preventDefault()
-        todoList.addTodo(input.value)
+        todoList.addTodo(input.value, validForm)
     }
 
     return (  

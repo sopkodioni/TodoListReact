@@ -10,9 +10,16 @@ class TodoList {
         makeAutoObservable(this)
     }
 
-    addTodo(title){
+    addTodo(title, validForm){
+        if(title === ''){
+            validForm(false)
+            return
+        }
+
         const todo = {id: this.todos[this.todos.length - 1].id + 1, title, completed: false}
         this.todos.push(todo)
+        validForm(true)
+
 
         input.onChange('')
     }

@@ -1,12 +1,17 @@
 import TodoList from '../../components/TodoList/TodoList'
 import TodoForm from '../TodoForm/TodoFrom'
+import Warning from '../../ui/Warning/Warning'
 
 import style from './Todo.module.css'
+import { useState } from 'react'
 
 const Todo = () => {
+    const [validForm, setValidForm] = useState(true)
+
     return (  
         <div className={style.todo}>
-          <TodoForm />
+          { validForm || <Warning>Введите название!</Warning> }
+          <TodoForm validForm={setValidForm}/>
           <TodoList />
         </div>
     )
