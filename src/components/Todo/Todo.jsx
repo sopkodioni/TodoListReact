@@ -3,11 +3,11 @@ import TodoList from '../../components/TodoList/TodoList'
 import TodoForm from '../TodoForm/TodoFrom'
 
 // Styles
-import cl from './Todo.module.css'
+import style from './Todo.module.css'
 
 function Todo() {
     return (  
-        <div className={cl.todo}>
+        <div className={style.todo}>
           <TodoForm />
           <TodoList />
         </div>

@@ -12,7 +12,7 @@ import Input from "../Input/Input"
 
 
 // Styled
-import cl from './TodoForm.module.css'
+import style from './TodoForm.module.css'
 
 const TodoForm = observer(() => {
     const createTodo = (e) => {
@@ -21,7 +21,7 @@ const TodoForm = observer(() => {
     }
 
     return (  
-        <form className={cl.todo__form}>
+        <form className={style.todo__form}>
             <Input value={input.value} onChange={(event) => input.onChange(event.target.value)} type="text" placeholder="Name task"/>
             <Button onClickFunc={createTodo}>Add</Button>
         </form>

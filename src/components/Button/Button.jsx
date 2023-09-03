@@ -1,8 +1,8 @@
-import cl from './Button.module.css'
+import style from './Button.module.css'
 
-function Button({onClickFunc, style, children}) {
+function Button({onClickFunc, styles, children}) {
     return (  
-        <button className={cl.btn} style={style} onClick={onClickFunc}>{children}</button>
+        <button className={style.btn} style={styles} onClick={onClickFunc}>{children}</button>
     )
 }
 

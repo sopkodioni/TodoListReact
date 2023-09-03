@@ -1,8 +1,8 @@
-import cl from './Input.module.css'
+import style from './Input.module.css'
 
 function Input({ type = 'text', placeholder='', onChange, value }) {
     return (  
-        <input value={value} onChange={onChange} className={cl.input} type={type} placeholder={placeholder} />
+        <input value={value} onChange={onChange} className={style.input} type={type} placeholder={placeholder} />
     )
 }
 
