@@ -14,7 +14,7 @@ const TodoForm = observer(() => {
     }
 
     return (  
-        <form className={style.todo__form}>
+        <form className={style.todoForm}>
             <Input value={input.value} onChange={(event) => input.onChange(event.target.value)} type="text" placeholder="Name task"/>
             <Button onClickFunc={createTodo}>Add</Button>
         </form>
