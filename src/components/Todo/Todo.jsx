@@ -1,6 +1,5 @@
 import TodoList from '../../components/TodoList/TodoList'
 import TodoForm from '../TodoForm/TodoFrom'
-import Warning from '../../ui/Warning/Warning'
 
 import style from './Todo.module.css'
 import { useState } from 'react'
@@ -10,7 +9,7 @@ const Todo = () => {
 
     return (  
         <div className={style.todo}>
-          { validForm || <Warning>Введите название!</Warning> }
+          { validForm || <Alert message="Error" type="error" showIcon /> }
           <TodoForm validForm={setValidForm}/>
           <TodoList />
         </div>

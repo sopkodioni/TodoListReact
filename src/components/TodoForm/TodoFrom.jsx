@@ -9,14 +9,26 @@ import {PlusCircleOutlined} from '@ant-design/icons'
 
 const TodoForm = observer(({validForm}) => {
     const createTodo = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         todoList.addTodo(input.value, validForm)
     }
 
     return (  
-        <form className={style.todoForm}>
-            <Input className={style.input} value={input.value} onChange={(event) => input.onChange(event.target.value)} placeholder="Name task"/>
-            <Button className={style.btn} type="primary" onClick={createTodo}>
+        <form className={style.todoForm} onSubmit={(event) => event.preventDefault()}>
+            <Input className={style.input} 
+                    value={input.value} 
+                    onChange={(event) => input.onChange(event.target.value)} 
+                    placeholder="Name task"
+                    onKeyDown={(event) => {
+                        if(event.keyCode === 13) {
+                            createTodo()
+                        }
+                    }}
+            />
+            <Button className={style.btn} 
+                    type="primary" 
+                    onClick={createTodo}
+            >
                 <PlusCircleOutlined />
             </Button>
         </form>
