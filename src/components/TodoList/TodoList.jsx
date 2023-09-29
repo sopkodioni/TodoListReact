@@ -9,8 +9,8 @@ const TodoList = observer(() => {
         <div className={style.todoList}>
             {
                 todoList.todos.length ? 
-                todoList.todos.map(todo => (
-                    <TodoItem key={todo.id} id={todo.id} title={todo.title} />
+                todoList.todos.map((todo, index) => (
+                    <TodoItem key={todo.id} id={++index} title={todo.title} />
                 ))
                 :
                 <h2 className={style.titleList}>Empty list</h2>

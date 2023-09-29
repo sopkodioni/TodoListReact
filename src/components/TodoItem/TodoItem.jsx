@@ -1,8 +1,8 @@
 import { Button } from 'antd';
 import style from './TodoItem.module.css'
+import { observer } from 'mobx-react-lite';
 
 import {DeleteOutlined, CheckOutlined} from '@ant-design/icons'
-import { observer } from 'mobx-react-lite';
 import todoList from '../../store/todoList';
 
 const TodoItem = observer(({id, title}) => {

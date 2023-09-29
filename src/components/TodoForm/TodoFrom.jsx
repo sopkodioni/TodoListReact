@@ -9,7 +9,6 @@ import {PlusCircleOutlined} from '@ant-design/icons'
 
 const TodoForm = observer(({validForm}) => {
     const createTodo = (e) => {
-        // e.preventDefault()
         todoList.addTodo(input.value, validForm)
     }
 

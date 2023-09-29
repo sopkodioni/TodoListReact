@@ -3,9 +3,9 @@ import input from "./input";
 
 class TodoList {
     todos = [
-        // {id: 1, title: 'Walking', completed: false},
-        // {id: 2, title: 'Eat', completed: false},
-        // {id: 3, title: 'Привет как дела', completed: false},
+        {id: 1, title: 'Walking', completed: false},
+        {id: 2, title: 'Eat', completed: false},
+        {id: 3, title: 'Привет как дела', completed: false},
     ]
     
     constructor(){
@@ -27,7 +27,7 @@ class TodoList {
     }
 
     deleteTodo(id){
-        this.todos.splice(this.todos.indexOf(id), 1)
+        this.todos.splice(id-1, 1)
     }
 
     completeTodo(){
