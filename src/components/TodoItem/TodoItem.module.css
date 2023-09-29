@@ -1,7 +1,13 @@
 .todoItem{
     padding: 10px;
-    border: 1px solid #c7c7c7;
+    border: 1px solid #e4e4e4;
     border-radius: 10px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.btn{
+    height: auto;
 }

@@ -3,7 +3,9 @@ import input from "./input";
 
 class TodoList {
     todos = [
-        {id: 1, title: 'Walking', completed: false},
+        // {id: 1, title: 'Walking', completed: false},
+        // {id: 2, title: 'Asdfsdfsdf', completed: false},
+        // {id: 3, title: 'Lorem sss', completed: false},
     ]
     
     constructor(){
@@ -16,7 +18,7 @@ class TodoList {
             return
         }
 
-        const todo = {id: this.todos[this.todos.length - 1].id + 1, title, completed: false}
+        const todo = {id: this.todos.length + 1, title, completed: false}
         this.todos.push(todo)
         validForm(true)
 

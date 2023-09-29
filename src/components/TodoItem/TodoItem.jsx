@@ -1,14 +1,19 @@
-import Button from '../../ui/Button/Button'
+import { Button } from 'antd';
 import style from './TodoItem.module.css'
 
-const TodoItem = ({id, title}) => {
+import {DeleteOutlined} from '@ant-design/icons'
+import { observer } from 'mobx-react-lite';
+import todoList from '../../store/todoList';
+
+const TodoItem = observer(({id, title}) => {
     return (  
         <div className={style.todoItem}>
-            <span>{id}. </span>
-            <span>{title}</span>
-            <Button styles={{backgroundColor: 'red', marginLeft: 'auto'}}>delete</Button>
+            <div>
+                <span>{id}. </span> <span>{title}</span>
+            </div>
+            <Button className={style.btn} onClick={() => todoList.deleteTodo(id)} type="primary" danger><DeleteOutlined /></Button>
         </div>
     )
-}
+})
 
 export default TodoItem

@@ -2,4 +2,15 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    margin-bottom: 20px;
+}
+
+.btn{
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.input{
+    height: 40px;
 }
