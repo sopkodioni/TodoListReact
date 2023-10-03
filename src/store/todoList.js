@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 
-class TodoList {
+export default class TodoListStore {
     todos = [
         {id: 1, title: 'Walking', completed: false},
         {id: 2, title: 'Eat', completed: false},
@@ -31,5 +31,3 @@ class TodoList {
         
     }
 }
-
-export default new TodoList()

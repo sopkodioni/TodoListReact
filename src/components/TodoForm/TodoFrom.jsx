@@ -1,13 +1,10 @@
 import { observer } from "mobx-react-lite"
-
-import todoList from '../../store/todoList'
-
 import style from './TodoForm.module.css'
 import {Button,Input} from 'antd'
 import {PlusCircleOutlined} from '@ant-design/icons'
 import { useState } from "react"
 
-const TodoForm = observer(({validForm}) => {
+const TodoForm = observer(({validForm, todoList}) => {
     const [value, setValue] = useState('')
 
     const createTodo = (e) => {
