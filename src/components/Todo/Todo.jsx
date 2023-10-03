@@ -4,19 +4,29 @@ import TodoForm from '../TodoForm/TodoFrom'
 import TodoListStore from '../../store/todoList'
 import style from './Todo.module.css'
 import { useState } from 'react'
+import { observer } from 'mobx-react-lite'
 
 
-const Todo = () => {
-    const [validForm, setValidForm] = useState(true)
-    const [todoList] = useState(() => new TodoListStore())
-    
-    return (  
-        <div className={style.todo}>
-          { validForm || <Alert className={style.errorAdd} message="Input name task!" type="error" showIcon closable /> }
-          <TodoForm todoList={todoList} validForm={setValidForm}/>
-          <TodoList todoList={todoList}/>
-        </div>
-    )
-}
+const Todo = observer(() => {
+  const [todoList] = useState(() => new TodoListStore())
+  
+  return (  
+      <div className={style.todo}>
+        { 
+          todoList.isValid || 
+          <Alert 
+            className={style.errorAdd} 
+            message="Input name task!" 
+            type="error" 
+            showIcon 
+            closable 
+          /> 
+        }
+
+        <TodoForm todoList={todoList}/>
+        <TodoList todoList={todoList}/>
+      </div>
+  )
+})
 
 export default Todo

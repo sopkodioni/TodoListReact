@@ -9,7 +9,14 @@ const TodoList = observer(({ todoList }) => {
             {
                 todoList.todos.length ? 
                     todoList.todos.map((todo, index) => (
-                    <TodoItem todoList={todoList} key={index} id={++index} title={todo.title} completed={todo.completed} />
+                    <TodoItem 
+                        id={todo.id} 
+                        key={index} 
+                        index={++index} 
+                        title={todo.title} 
+                        todoList={todoList} 
+                        completed={todo.completed} 
+                    />
                     ))
                     :
                     <h2 className={style.titleList}>Empty list</h2>
