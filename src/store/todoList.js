@@ -1,5 +1,4 @@
 import { makeAutoObservable } from "mobx";
-import input from "./input";
 
 class TodoList {
     todos = [
@@ -12,7 +11,7 @@ class TodoList {
         makeAutoObservable(this)
     }
 
-    addTodo(title, validForm){
+    addTodo(title, validForm, setValue){
         if(title === ''){
             validForm(false)
             return
@@ -21,17 +20,15 @@ class TodoList {
         const todo = {id: this.todos.length + 1, title, completed: false}
         this.todos.push(todo)
         validForm(true)
-
-
-        input.onChange('')
+        setValue('')
     }
 
     deleteTodo(id){
-        this.todos.splice(id-1, 1)
+        this.todos.splice(--id, 1)
     }
 
-    completeTodo(){
-
+    completeTodo(id){
+        
     }
 }
 
