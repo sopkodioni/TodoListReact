@@ -11,7 +11,7 @@ const TodoList = observer(({ todoList }) => {
                     todoList.todos.map((todo, index) => (
                     <TodoItem 
                         id={todo.id} 
-                        key={index} 
+                        key={todo.id} 
                         index={++index} 
                         title={todo.title} 
                         todoList={todoList} 
