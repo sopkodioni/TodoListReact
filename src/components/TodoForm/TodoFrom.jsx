@@ -1,14 +1,19 @@
-import { observer } from "mobx-react-lite"
 import style from './TodoForm.module.css'
+import { observer } from "mobx-react-lite"
 import {Button,Input} from 'antd'
 import {PlusCircleOutlined} from '@ant-design/icons'
 import { useState } from "react"
 
-const TodoForm = observer(({validForm, todoList}) => {
+const TodoForm = observer(({todoList}) => {
     const [value, setValue] = useState('')
 
     const createTodo = (e) => {
-        todoList.addTodo(value, validForm, setValue)
+        todoList.addTodo(value)
+        setValue('')
+    }
+
+    const onKeyDown = (e) => {
+        if(e.keyCode === 13) createTodo()
     }
 
     return (  
@@ -17,9 +22,7 @@ const TodoForm = observer(({validForm, todoList}) => {
                     value={value} 
                     onChange={(event) => setValue(event.target.value)} 
                     placeholder="Name task"
-                    onKeyDown={(event) => {
-                        if(event.keyCode === 13) createTodo()
-                    }}
+                    onKeyDown={onKeyDown}
             />
             <Button className={style.btn} 
                     type="primary" 

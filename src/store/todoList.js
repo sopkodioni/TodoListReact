@@ -1,33 +1,35 @@
 import { makeAutoObservable } from "mobx";
 
 export default class TodoListStore {
+    isValid = true
+    
     todos = [
         {id: 1, title: 'Walking', completed: false},
         {id: 2, title: 'Eat', completed: false},
         {id: 3, title: 'Привет как дела', completed: false},
     ]
-    
+
     constructor(){
         makeAutoObservable(this)
     }
 
-    addTodo(title, validForm, setValue){
+    addTodo(title){
         if(title === ''){
-            validForm(false)
+            this.isValid = false
             return
         }
 
-        const todo = {id: this.todos.length + 1, title, completed: false}
+        const todo = {id: Date.now(), title, completed: false}
         this.todos.push(todo)
-        validForm(true)
-        setValue('')
+        this.isValid = true
     }
 
     deleteTodo(id){
-        this.todos.splice(--id, 1)
+        this.todos.splice(this.todos.findIndex(item => item.id === id), 1)
     }
 
     completeTodo(id){
-        
+        const completedEl = this.todos[this.todos.findIndex(item => item.id === id)]
+        completedEl.completed = !completedEl.completed
     }
 }
